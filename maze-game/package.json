@@ -1,0 +1,9 @@
+{
+  "name": "me-cung-mana",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Game mê cung: dùng mana để đi qua checkpoint, hết mana trước khi tìm được lối ra là thua",
+  "scripts": {
+    "test": "node --test tests/maze.test.js"
+  }
+}

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mê Cung Mana</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <main class="app">
+    <header class="top">
+      <h1>Mê Cung Mana</h1>
+      <div class="controls">
+        <select id="level-select" aria-label="Chọn màn"></select>
+        <button id="btn-restart" type="button">Chơi lại</button>
+        <button id="btn-new" type="button">Mê cung mới</button>
+      </div>
+    </header>
+
+    <section class="hud">
+      <div class="mana">
+        <div class="mana-label">Mana <span id="mana-text"></span></div>
+        <div class="mana-bar"><div id="mana-fill"></div></div>
+      </div>
+      <div class="stats">
+        <span>Bước: <b id="moves">0</b></span>
+        <span>Đã tiêu: <b id="spent">0</b></span>
+      </div>
+    </section>
+
+    <p id="message" class="message" role="status"></p>
+
+    <div class="board">
+      <canvas id="canvas"></canvas>
+      <div id="overlay" class="overlay hidden">
+        <div class="overlay-box">
+          <h2 id="overlay-title"></h2>
+          <p id="overlay-text"></p>
+          <div class="overlay-actions">
+            <button id="overlay-restart" type="button">Chơi lại</button>
+            <button id="overlay-next" type="button">Màn tiếp</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="dpad" aria-label="Điều khiển">
+      <button data-dir="up" type="button" aria-label="Lên">▲</button>
+      <button data-dir="left" type="button" aria-label="Trái">◀</button>
+      <button data-dir="down" type="button" aria-label="Xuống">▼</button>
+      <button data-dir="right" type="button" aria-label="Phải">▶</button>
+    </div>
+
+    <ul class="legend">
+      <li><i class="sw player"></i> Bạn</li>
+      <li><i class="sw exit"></i> Lối ra</li>
+      <li><i class="sw cp"></i> Checkpoint (số = mana cần trả)</li>
+      <li><i class="sw cp-open"></i> Checkpoint đã mở</li>
+    </ul>
+    <p class="hint">Di chuyển bằng phím mũi tên / WASD, vuốt hoặc nút bấm. Hết mana mà chưa tới lối ra là thua!</p>
+  </main>
+
+  <script src="js/maze.js"></script>
+  <script src="js/game.js"></script>
+</body>
+</html>
